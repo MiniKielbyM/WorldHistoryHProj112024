@@ -141,6 +141,171 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.card');
+            const uniqueElements = [
+                'general-info',
+                'type-of-government',
+                'rights-and-freedoms',
+                'economy',
+                'values',
+                'pitfalls'
+            ];
+    
+            cards.forEach((card, index) => {
+                card.addEventListener('click', function () {
+                    const elementId = uniqueElements[index];
+                    const existingElement = document.getElementById(elementId);
+                    if (existingElement) {
+                        existingElement.style.position = 'fixed';
+                        existingElement.style.top = '50%';
+                        existingElement.style.left = '100%';
+                        existingElement.style.transform = 'translateY(-50%)';
+                        existingElement.style.backgroundColor = '#1e1e1e';
+                        existingElement.style.color = '#ffffff';
+                        existingElement.style.padding = '20px';
+                        existingElement.style.boxShadow = '0 4px 8px rgba(255, 255, 255, 0.2)';
+                        existingElement.style.transition = 'left 0.5s ease';
+                        existingElement.style.zIndex = '1000';
+                        existingElement.style.display = 'block';
+    
+                        setTimeout(() => {
+                            existingElement.style.left = '50%';
+                            existingElement.style.transform = 'translate(-50%, -50%)';
+                        }, 10);
+                    }
+                });
+            });
+        });
+        function closeElement(element) {
+        element.style.left = '150vw';
+        setTimeout(() => {
+            element.style.display = 'none';
+        }, 1000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.card');
+        const uniqueElements = [
+            'general-info',
+            'type-of-government',
+            'rights-and-freedoms',
+            'economy',
+            'values',
+            'pitfalls'
+        ];
+
+        cards.forEach((card, index) => {
+            card.addEventListener('click', function () {
+                const elementId = uniqueElements[index];
+                const existingElement = document.getElementById(elementId);
+                if (existingElement) {
+                    existingElement.style.left = '150vw';
+                    existingElement.style.backgroundColor = '#1e1e1e';
+                    existingElement.style.color = '#ffffff';
+                    existingElement.style.boxShadow = '0 4px 8px rgba(255, 255, 255, 0.2)';
+                    existingElement.style.transition = 'left 1s ease';
+                    existingElement.style.zIndex = '1000';
+                    existingElement.style.display = 'block';
+
+                    setTimeout(() => {
+                        existingElement.style.left = '50vw';
+                    }, 10);
+
+                    existingElement.addEventListener('click', function () {
+                        closeElement(existingElement);
+                    });
+                }
+            });
+        });
+    });
+    </script>
+
+    <div id="type-of-government" class="unique-element" style="display: none;">
+        <h3>Type of Government</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <p>The Shogun was the military dictator who held the real power, while the Emperor was a figurehead.</p>
+                <p>Local lords, known as Daimyo, controlled their own territories and owed allegiance to the Shogun.</p>
+            </div>
+            <div class="col-md-12">
+                <img src="R.jpg" alt="Government Structure" class="img-fluid mt-3" style="width: 30%; height: auto;">
+            </div>
+        </div>
+    </div>
+
+    <div id="general-info" class="unique-element" style="display: none;">
+        <h3>General Information</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Feudal Japan was characterized by a decentralized political structure where local lords held significant power.</p>
+                <p>The feudal system was established in the 12th century and lasted until the 19th century.</p>
+            </div>
+            <div class="col-md-12">
+                <img src="GenHist.jpg" alt="Government Structure" class="img-fluid mt-3" style="width: 30%; height: auto;">
+            </div>
+        </div>
+    </div>
+
+    <div id="rights-and-freedoms" class="unique-element" style="display: none;">
+        <h3>Rights and Freedoms</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Samurai had significant privileges, including the right to bear arms and a stipend from their lords.</p>
+                <p>Peasants, artisans, and merchants had fewer rights and were subject to the authority of the Samurai and Daimyo.</p>
+            </div>
+            <div class="col-md-12">
+                <img src="ofpi(4).jpg" alt="Rights and Freedoms" class="img-fluid mt-3" style="width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
+
+    <div id="economy" class="unique-element" style="display: none;">
+        <h3>Economy</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <p>The economy was primarily agrarian, with rice being the main crop and currency.</p>
+                <p>Trade and commerce were also important, with merchants playing a key role in the distribution of goods.</p>
+            </div>
+            <div class="col-md-12">
+                <img src="tsg(4).jpg" alt="Economy" class="img-fluid mt-3" style="width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
+
+    <div id="values" class="unique-element" style="display: none;">
+        <h3>Values</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Honor, loyalty, and duty were central values in feudal Japan, especially among the Samurai class.</p>
+                <p>These values were embodied in the Bushido code, which guided the behavior of the Samurai.</p>
+            </div>
+            <div class="col-md-12">
+                <img src="fgwsedgs.jpg" alt="Values" class="img-fluid mt-3" style="width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
+
+    <div id="pitfalls" class="unique-element" style="display: none;">
+        <h3>Pitfalls</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <p>The feudal system was marked by social inequality and limited social mobility.</p>
+                <p>Conflicts between Daimyo and Samurai, as well as natural disasters, also posed challenges to the stability of the system.</p>
+            </div>
+            <div class="col-md-12">
+                <img src="fasdeioufhioaqeuhfga.jpg" alt="Pitfalls" class="img-fluid mt-3" style="width: 30%; height: auto;">
+            </div>
+        </div>
+    </div>
+    <style>
+        .unique-element {
+            width: 100vw;
+            height: 100vh;
+            z-index: 1000;
+        }
+    </style>
 </body>
 
 </html>
